@@ -10,7 +10,7 @@ public class CMeeting {
 		
 		int timeRange = end.compareTo(start);
 		// Performs time check
-		if (timeRange <= 0 && timeRange > 60) {
+		if (timeRange <= 0 || timeRange > 60) {
 			throw new IllegalArgumentException("Time Range: start - end = " + timeRange);
 		} else {
 			this.startTime = start;
