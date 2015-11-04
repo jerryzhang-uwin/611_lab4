@@ -29,6 +29,12 @@ public class CTime {
 		return this.minute;
 	}
 	
+	/*
+	 * LOW COUPLING - Time comparison returns only an integer for other objects to decide
+	 * 					what to do with the results.
+	 * HIGH COHESION - The class itself decides the relationship with other objects rather than 
+	 * 					an outside class to take this responsibility.
+	 */
 	public int compareTo(CTime otherTime) {
 		// Return the minute discrepancy for comparing purpose.
 		return (this.hour * 60 + this.minute) 

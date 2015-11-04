@@ -2,11 +2,21 @@ package KitchenerAppTests;
 
 import static org.junit.Assert.*;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import KitchenerApp.CTime;
 
 public class TestCTime {
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
 
 	// Regular case
 	@Test
