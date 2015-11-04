@@ -6,14 +6,14 @@ public class CTime {
 	private int minute;
 	
 	public CTime(int h, int m) {
-		if (h >= 0 || h <= 23) {
+		if (h >= 0 && h <= 23) {
 			this.hour = h;
 		} else {
 			// Invalid format, reset to 0
 			h = 0;
 		}
 		
-		if (m >= 0 || m <= 59) {
+		if (m >= 0 && m <= 59) {
 			this.minute = m;
 		} else {
 			// Invalid format, reset to 0
