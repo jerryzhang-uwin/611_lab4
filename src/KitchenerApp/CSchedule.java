@@ -19,6 +19,11 @@ public class CSchedule
 		// if there is no overlapping then add the meeting
 		// the function is in CMeeting.java
 		// if failed return -1
+		if(meetingList.contains(meeting)==true)
+		{
+			System.out.println("The meeting already exists!");
+			return -2;
+		}
 		this.meetingList.add(meeting);
 		return 0;
 		
@@ -27,6 +32,10 @@ public class CSchedule
 	public CMeeting getMeeting(int id)
 	{
 		return	meetingList.get(id);
+	}
+	public int getMeetingSize()
+	{
+		return meetingList.size();
 	}
 	
 }
