@@ -83,9 +83,10 @@ public class TestCMeeting {
 	// Meeting comparison tests (test if two meetings overlap or not)
 	@Test
 	public void testOverlapMeetings() {
-		assertEquals(0, meeting1.compareTo(meeting2));
-		assertEquals(60, meeting1.compareTo(meeting3));
-		assertEquals(-15, meeting1.compareTo(meeting4));
+		assertFalse(meeting1.compareTo(meeting2));
+		assertTrue(meeting1.compareTo(meeting3));
+		assertFalse(meeting1.compareTo(meeting4));
+		assertTrue(meeting3.compareTo(meeting1));
 	}
 	
 	// Throws exception when location is empty

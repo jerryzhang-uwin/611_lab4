@@ -10,7 +10,7 @@ import KitchenerApp.CSchedule;
 import KitchenerApp.CTime;
 import junit.framework.Assert;
 
-public class CScheduleTest {
+public class TestCSchedule {
 
 	//initial parameter for first meeting
 	private CTime start_1;
