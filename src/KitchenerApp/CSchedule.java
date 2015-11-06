@@ -4,38 +4,51 @@ import java.util.ArrayList;
 
 public class CSchedule 
 {
-
+	//Array list meetingList is for storing CMeeting instant
 	private ArrayList<CMeeting> meetingList;
 	
-	
+	//Initialization
 	public CSchedule()
 	{
 		this.meetingList=new ArrayList<CMeeting>();
 	}
 	
-	
-	public int addMeeting(CMeeting meeting)
+	//add new meeting in schedule and identify whether new meeting is overlapping by using isOverlapping method
+	public void addMeeting(CMeeting meeting)
 	{
-		// if there is no overlapping then add the meeting
-		// the function is in CMeeting.java
-		// if failed return -1
-		if(meetingList.contains(meeting)==true)
+		if(meetingList.isEmpty()) 
 		{
-			System.out.println("The meeting already exists!");
-			return -2;
+			meetingList.add(meeting);
 		}
-		this.meetingList.add(meeting);
-		return 0;
-		
+		else if(isOverlapping(meeting)) System.out.println("The meeting is overlapping!");
+		else meetingList.add(meeting);
 	}
 
 	public CMeeting getMeeting(int id)
 	{
 		return	meetingList.get(id);
 	}
+	
 	public int getMeetingSize()
 	{
 		return meetingList.size();
+	}
+	
+	//isOverlapping method is for checking whether meeting is overlapping or not
+//	public boolean isOverlapping (CMeeting meeting, int index)
+//	{
+//		if(meeting.compareTo(meetingList.get(index))) return false;
+//		else return true;
+//	}
+	public boolean isOverlapping (CMeeting meeting)
+	{
+		for(int i = 0;i<getMeetingSize();i++)
+		{
+			if(meeting.compareTo(meetingList.get(i))) return false;
+			else if (!meeting.compareTo(meetingList.get(i))) return true;
+		}
+		
+		return true;
 	}
 	
 }

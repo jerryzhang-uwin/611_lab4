@@ -42,13 +42,13 @@ public class CMeeting {
 	
 	// Comparing other meeting's start time to this meeting's end time.
 	// Other meeting's start time should not be equal to or earlier than this meeting's end time.
-	public int compareTo(CMeeting other) {
+	public boolean compareTo(CMeeting other) {
 		/*
 		 * LOW COUPLING - Meeting comparison returns only an integer for other objects to decide
 		 * 					what to do with the results.
 		 * HIGH COHESION - The class itself decides the relationship with other objects rather than 
 		 * 					an outside class to take this responsibility.
 		 */
-		return other.startTime.compareTo(this.endTime);
+		return (other.startTime.compareTo(this.endTime) > 0 || other.endTime.compareTo(this.startTime) < 0);
 	}
 }
